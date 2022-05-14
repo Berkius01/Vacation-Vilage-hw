@@ -1,0 +1,73 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>List Customers</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		 
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body>
+		
+		<div class="container">
+		
+			<h3>List Customers</h3>
+			
+			<hr/>
+			
+			<th>
+				<p align="right">
+					
+    				<form action="#" th:action="@{postindex}" th:method="addCustomer" >
+    					<a href="http://localhost:8080" class="btn btn-outline-info" role="button">Ana Sayfa</a>
+    					<button type="submit" class="btn btn-outline-info">
+        					Müşteri ekle
+    					</button>
+    					
+					</form>
+				</p>
+			</th>
+			
+			<table class="table table-bordered table-striped">
+			
+				<thead>
+									
+					<tr>
+						<th>VillageId</th>
+						<th>Name</th>
+						<th>ContactNumber</th>
+						<th>Age</th>
+						<th>RoomNumber</th>
+						<th>Password</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="customer: ${Customer}">
+						<td th:text="${customer.VacationVillageId}" />
+						<td th:text="${customer.Name}" />
+						<td th:text="${customer.ContactPhone}" />
+						<td th:text="${customer.Age}" />
+						<td th:text="${customer.RoomNumber}" />
+						<td th:text="${customer.Password}" />
+						<td 
+							<p align="right">
+								<form action="#" th:action="@{'/api/v1/customer/{id}'(id=${customer.VacationVillageId})}" th:method="deleteCustomer" >
+    								<button type="submit" class="btn btn-outline-danger">
+        								Müşteriyi sil
+    								</button>
+								</form>
+							</p>
+						
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+		
+	</body>
+	
+</html>

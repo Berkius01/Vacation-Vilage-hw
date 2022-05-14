@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>village</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" 
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+crossorigin="anonymous" />
+</head>
+<body>
+<section class="vh-100 bg-image"
+  style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Hotel-room-renaissance-columbus-ohio.jpg/1024px-Hotel-room-renaissance-columbus-ohio.jpg');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Add New Mass Acitivtiy Record</h2>
+				
+              <form th:action="@{post/{id}(id=${id})}" method="POST">
+              
+              <div class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="activityType"/>
+                  <label class="form-label" for="form3Example1cg">Activity Type</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example3cg" class="form-control form-control-lg" name="Hour"/>
+                  <label class="form-label" for="form3Example3cg">Hour</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example4cg" class="form-control form-control-lg" name="Date"/>
+                  <label class="form-label" for="form3Example4cg">Date</label>
+                </div>
+                
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example4cg" class="form-control form-control-lg" name="Name"/>
+                  <label class="form-label" for="form3Example4cg">Name</label>
+                </div>
+                
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example4cg" class="form-control form-control-lg" name="Capacity"/>
+                  <label class="form-label" for="form3Example4cg">Capacity</label>
+                </div>
+                
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example4cg" class="form-control form-control-lg" name="Age"/>
+                  <label class="form-label" for="form3Example4cg">Age</label>
+                </div>
+                
+                <div class="form-outline mb-4">
+                  <input type="text" id="form3Example4cg" class="form-control form-control-lg" name="Internet"/>
+                  <label class="form-label" for="form3Example4cg">InternetLink</label>
+                </div>
+                
+                              
+
+                
+
+    
+                <div class="d-flex justify-content-center">
+                  <button type="submit" name="add"
+                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Add Activity</button>
+                </div>
+                
+                <label class="form-label" for="form3Example4cdg">
+                
+                </label>
+              
+                <div class="d-flex justify-content-center">
+                 	<a href="http://localhost:8080/api/v1/mass/get" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" role="button">Önceki Sayfa</a> 
+                </div>
+                <label class="form-label" for="form3Example4cdg">					
+                </label>
+                
+                <div class="d-flex justify-content-center">
+                	<a href="http://localhost:8080" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" role="button">Ana Sayfa</a>
+                </div>
+
+         
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Mass Activites</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		 
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body>
+		
+		<div class="container">
+		
+			<h3>Mass Aktivite Kontrol Paneli</h3>
+			
+			<hr/>
+			
+			<th>
+				<p align="right">	
+    					<a href="http://localhost:8080" class="btn btn-outline-info" role="button">Ana Sayfa</a>              
+
+				</p>
+				
+				
+			</th>
+			
+			<table class="table table-bordered table-striped">
+			
+				<thead>
+									
+					<tr>
+						<th>ActivityId</th>
+						<th>Activity Type</th>
+						<th>Date</th>
+						<th>Hour</th>
+						<th>Name</th>
+						<th>Capacity</th>
+						<th>Age</th>
+						<th>AnimaotrPhone</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="mass: ${Mass}">
+						<td th:text="${mass.ID}" />
+						<td th:text="${mass.activityType}" />
+						<td th:text="${mass.Date}" />
+						<td th:text="${mass.Hour}" />
+						<td th:text="${mass.Name}" />
+						<td th:text="${mass.Capacity}" />
+						<td th:text="${mass.Age}" />
+						<td th:text="${mass.AnimatorPhone}" />
+						<td 
+							<p align="right">
+								<form th:action="@{'/api/v1/appointment/{id}/{animatorPhone}/{activitytype}/{name}/'(id=${phone},animatorPhone=${mass.AnimatorPhone},activitytype=${mass.activityType},name=${mass.Name})}" >
+								 
+    								<button type="submit" class="btn btn-outline-success">
+        								Aktiviteye başvur
+    								</button>
+								</form>
+							</p>
+						
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+
+	</body>
+	
+</html>

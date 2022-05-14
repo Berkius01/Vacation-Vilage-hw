@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Customer Registration Form</title>
+
+</head>
+ 
+<body>
+<h3>CUSTOMER REGISTRATION FORM</h3>
+
+ 
+<table align="center" cellpadding = "10">
+ 
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td>NAME</td>
+<td>Name:<input type="text"  maxlength="30"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+ 
+<!----- Date Of Birth -------------------------------------------------------->
+<tr>
+<td>DATE OF BIRTH</td>
+<td>Dob:<input type="text"  maxlength="30"/>
+(format: year-month-day ex:2000-12-25)
+</td>
+ </tr>
+ 
+<!----- Email---------------------------------------------------------->
+<tr>
+<td>EMAIL</td>
+<td><input type="text" name="Email_Id" maxlength="100" /></td>
+</tr>
+
+<td>
+<form action="#" th:action="@{post}" th:method="registerNewStudent" >
+    <button type="submit" class="btn" <a href="/api/v1/students/@{name}">>
+        Kaydet
+   </button>
+</form>
+</td>
+<html>
+ 

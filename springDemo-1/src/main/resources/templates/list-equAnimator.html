@@ -1,0 +1,65 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>Mass Activites</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		 
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body>
+		
+		<div class="container">
+		
+			<h3>Equipment Control panel</h3>
+			
+			<hr/>
+			
+			<th>
+				<p align="right">	
+    					
+    					<a href="http://localhost:8080" class="btn btn-outline-info" role="button">Ana Sayfa</a>
+    					
+					
+				</p>
+				
+				
+			</th>
+			
+			<table class="table table-bordered table-striped">
+			
+				<thead>
+									
+					<tr>
+						<th>EquipmentId</th>
+						<th>Name</th>
+						<th>Purpose</th>
+						<th>Person SSN</th>
+						<th>Phone number</th>
+						<th>Locker number</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="app: ${Equipment}">
+						<td th:text="${app.eid}" />
+						<td th:text="${app.name}" />
+						<td th:text="${app.Purpose}" />
+						<td th:text="${app.equip_person_ssn}" />
+						<td th:text="${app.phone_number}" />
+						<td th:text="${app.locker_number}" />
+						
+						
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+
+	</body>
+	
+</html>

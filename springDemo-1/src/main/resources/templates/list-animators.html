@@ -1,0 +1,70 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<title>List Animators</title>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		 
+		<link rel="stylesheet" 
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+			integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+			crossorigin="anonymous" />
+	</head>
+	
+	<body>
+		
+		<div class="container">
+		
+			<h3>List Animators</h3>
+			
+			<hr/>
+			
+			<th>
+				<p align="right">
+					
+    				<form action="#" th:action="@{postindex}" th:method="addAnimator" >
+    					<a href="http://localhost:8080" class="btn btn-outline-info" role="button">Ana Sayfa</a>
+    					<button type="submit" class="btn btn-outline-info">
+        					Animator ekle
+    					</button>
+					</form>
+				</p>
+			</th>
+			
+			<table class="table table-bordered table-striped">
+			
+				<thead>
+									
+					<tr>
+						<th>AnimatorId</th>
+						<th>Name</th>
+						<th>PhoneNumber</th>
+                        <th>Expertise</th>
+                        <th>Password</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="animator: ${Animator}">
+						<td th:text="${animator.EmployeeID}" />
+						<td th:text="${animator.Name}" />
+						<td th:text="${animator.PhoneNumber}" />
+						<td th:text="${animator.ExpertiseArea}" />
+						<td th:text="${animator.Password}" />
+						<td 
+							<p align="right">
+								<form action="#" th:action="@{'/api/v1/animator/{id}'(id=${animator.EmployeeID})}" th:method="deleteAnimator" >
+    								<button type="submit" class="btn btn-outline-danger">
+        								Animatörü sil
+    								</button>
+								</form>
+							</p>
+						
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+		
+	</body>
+	
+</html>
